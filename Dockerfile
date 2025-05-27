@@ -1,6 +1,6 @@
 FROM odoo:16.0
 
-COPY ./custom_addons /mnt/extra-addons
+COPY ./addons /mnt/extra-addons
 
 # REMOVE this line (causes the permission issue)
 # RUN chown -R odoo:odoo /mnt/extra-addons
