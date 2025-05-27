@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 # Copy your custom addons into the container
-COPY ./custom_addons /mnt/extra-addons
+COPY ./addons /mnt/extra-addons
 
 # Ensure ownership and permissions
 RUN chown -R odoo:odoo /mnt/extra-addons
