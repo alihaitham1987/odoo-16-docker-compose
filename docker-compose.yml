@@ -1,2 +1,22 @@
-
+version: '2'
+services:
+  odoo16:
+    image: odoo:16
+    user: root
+    ports:
+      - "10016:8069"
+      - "20016:8072" # live chat
+    tty: true
+    command: --
+    environment:
+      - HOST=dpg-d0r9hpjuibrs73d1at1g-a
+      - USER=odoodb
+      - PASSWORD=8ywhzG8wHpRT1FQhPRUOV7pgF1bLaIBn
+    volumes:
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+    restart: always             # run as a service
     
